@@ -1,0 +1,12 @@
+<h1>New game</h1>
+
+<h3>
+<%= @grid %>
+</h3>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :grid, @grid.split("") %>
+  <input type="text" name="word" placeholder="Type your longest word">
+  <input type="submit">
+</form>
